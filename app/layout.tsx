@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "拓饗國際 | Tuoxiang International",
+  title: "拓饗企業 | Top Xiang Group",
   description:
-    "拓饗國際整合買吧直銷商城、吃吧餐飲連鎖與共享後勤資源，建立可管理、可複製、可擴張的事業平台。",
+    "拓饗企業以產業整合與科技應用為核心，布局 AI 算力、區塊鏈應用、國際貿易、品牌通路與智慧餐飲系統。",
   icons: {
     icon: "/tuoxiang-logo.png",
     shortcut: "/tuoxiang-logo.png",

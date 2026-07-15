@@ -19,7 +19,7 @@ export default function ChibaPage() {
     <main className="site-shell subpage">
       <header className="site-header">
         <Link className="brand-mark" href="/" aria-label="返回拓饗國際首頁">
-          <Image src="/tuoxiang-logo.png" alt="拓饗國際 Tuoxiang International" width={136} height={136} />
+          <Image src="/tuoxiang-logo-horizontal.png" alt="拓饗國際 Tuoxiang International" width={220} height={90} />
         </Link>
         <nav className="site-nav" aria-label="主要導覽">
           <Link href="/">拓饗首頁</Link>
@@ -30,10 +30,10 @@ export default function ChibaPage() {
 
       <section className="sub-hero chiba-hero">
         <p className="eyebrow">CHIBA BUSINESS UNIT</p>
-        <h1>吃吧餐飲連鎖</h1>
+        <h1>吃吧智慧餐飲系統</h1>
         <p>
-          吃吧是拓饗國際旗下的餐飲連鎖事業，聚焦餐盒產品、門市營運、外送通路與標準化管理，
-          以穩定品質、可控成本與可複製流程，建立具備展店潛力的餐飲營運模型。
+          吃吧是拓饗企業在餐飲創新領域推出的智慧餐飲系統，導入自動化設備、機器人流程設計與數據化 SOP，
+          以降低人力依賴、提升出餐穩定度，建立具備連鎖化與加盟複製潛力的餐飲模型。
         </p>
         <div className="hero-actions">
           <Link className="button primary" href="#model">查看營運模型</Link>
@@ -44,16 +44,16 @@ export default function ChibaPage() {
       <section className="section two-column">
         <div>
           <p className="section-label">POSITIONING</p>
-          <h2>吃吧的核心，不只是產品，而是可被複製的餐飲營運系統。</h2>
+          <h2>吃吧的核心，不只是餐飲產品，而是低人力、高標準化的智慧營運系統。</h2>
         </div>
         <div className="copy-block">
           <p>
-            若產品已具備基礎，吃吧初期更應優先建立產品標準、成本結構、出餐 SOP、品管檢核與現場管理制度。
-            這些基礎會決定未來能否穩定營收、控制毛利，並支撐後續展店。
+            吃吧透過機器人作業流程、半自動化廚房設備、SOP 數據化管理與低人力營運設計，
+            降低人事成本與營運風險，同時提升出餐效率、品質穩定度與展店速度。
           </p>
           <p>
-            在拓饗的集團架構下，吃吧透過共享財務、設計、行政與供應鏈支援，將資源集中在產品穩定、
-            通路開發、門市效率與展店模型，逐步建立具備規模化條件的餐飲事業。
+            在拓饗企業的產業整合架構下，吃吧以智慧設備、營運流程與加盟複製能力作為發展核心，
+            逐步建立可規模化、可管理、可輸出的餐飲創新事業。
           </p>
         </div>
       </section>

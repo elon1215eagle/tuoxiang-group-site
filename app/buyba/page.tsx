@@ -22,7 +22,7 @@ export default function BuybaPage() {
     <main className="site-shell subpage">
       <header className="site-header">
         <Link className="brand-mark" href="/" aria-label="返回拓饗國際首頁">
-          <Image src="/tuoxiang-logo.png" alt="拓饗國際 Tuoxiang International" width={136} height={136} />
+          <Image src="/tuoxiang-logo-horizontal.png" alt="拓饗國際 Tuoxiang International" width={220} height={90} />
         </Link>
         <nav className="site-nav" aria-label="主要導覽">
           <Link href="/">拓饗首頁</Link>
@@ -33,14 +33,14 @@ export default function BuybaPage() {
 
       <section className="sub-hero buyba-hero">
         <p className="eyebrow">BUYBA BUSINESS UNIT</p>
-        <h1>買吧直銷商城</h1>
+        <h1>買吧商城</h1>
         <p>
-          買吧是拓饗國際旗下的會員商流事業，透過直銷商城、商品推廣、會員經營與社群轉換，
-          建立能持續累積客群、放大銷售效益的數位商務平台。
+          買吧商城為妍沁國際旗下核心電商平台，屬於拓饗企業品牌與通路布局的重要事業。
+          平台採用「直銷＋電商」融合模式，結合社群推廣、數據化管理與嚴選商品策略，打造新型態分潤經濟體系。
         </p>
         <div className="hero-actions">
-          <a className="button primary" href="http://127.0.0.1:4173/?v=2">
-            前往現有買吧頁面
+          <a className="button primary" href="https://maiba-brand-site.vercel.app">
+            前往買吧正式網站
           </a>
           <Link className="button secondary" href="/">返回拓饗首頁</Link>
         </div>
@@ -49,16 +49,16 @@ export default function BuybaPage() {
       <section className="section two-column">
         <div>
           <p className="section-label">POSITIONING</p>
-          <h2>買吧承接的是會員商流，不只是單一商品銷售。</h2>
+          <h2>買吧承接的是品牌通路與會員商流，不只是單一商品銷售。</h2>
         </div>
         <div className="copy-block">
           <p>
             買吧的核心價值在於建立可被管理、可被追蹤、可被放大的會員銷售系統。
-            透過商品組合、會員教育、活動推廣與服務流程，將一次性交易逐步轉化為長期會員經營。
+            透過商品組合、創新獎金制度、社群裂變機制與會員服務流程，將一次性交易逐步轉化為長期會員經營。
           </p>
           <p>
-            在拓饗的集團架構下，買吧不需要單獨承擔所有後勤成本，而是透過共享財務、設計、客服、
-            物流與營運制度支援，將更多資源集中在會員成長、商品轉換與市場推進。
+            在拓饗企業的產業整合架構下，買吧串接妍沁國際的選品能力、品牌建構能力與供應鏈資源，
+            將更多資源集中在會員成長、商品轉換、社群推廣與市場推進。
           </p>
         </div>
       </section>

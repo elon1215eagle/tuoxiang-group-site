@@ -1,33 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const supportItems = [
-  ["財務治理", "建立損益、成本、現金流與分帳機制，讓各事業體的經營結果清楚可追蹤。"],
-  ["行政人資", "整合招募、到職、考勤、訓練與制度文件，支撐團隊穩定運作。"],
-  ["品牌設計", "統籌品牌視覺、活動素材、商品圖與通路物料，維持集團對外形象一致。"],
-  ["客服物流", "串接會員服務、訂單協調、出貨追蹤與異常處理，提升服務品質。"],
-  ["營運制度", "建立 SOP、KPI、會議追蹤與跨部門協作節奏，讓管理能被執行與複製。"],
-  ["事業整合", "以集團視角配置買吧與吃吧資源，讓不同事業共享能力、降低重複成本。"],
+const industryItems = [
+  ["區塊鏈技術應用", "參與數位資產平台相關技術建設與應用場景規劃，推動數位經濟基礎能力。"],
+  ["AI 算力基礎建設", "投入 AI 算力資源配置與技術應用布局，建構未來智慧產業發展所需底層能力。"],
+  ["國際貿易整合", "透過跨境資源整合，拓展國際貿易、供應鏈網絡與新型消費品通路機會。"],
+  ["兩岸產學合作", "推動產業、學研與資源交流合作，深化跨領域鏈結與長期產業協作。"],
+  ["智慧餐飲系統", "以自動化設備、機器人流程與數據化 SOP，建立低人力、高標準化的餐飲模型。"],
+  ["實體產業合作", "與台灣建設公司合作多項開發案，持續評估具長期價值的實體產業機會。"],
 ];
 
-const operatingPrinciples = [
-  "以集團母體思維規劃事業，不以單一專案思維短期運作。",
-  "以制度與數據管理成效，讓決策有依據、責任有歸屬。",
-  "以共享後勤降低重複成本，讓資源集中於成長與轉換。",
-  "以可複製模型推動擴張，先穩定流程，再放大規模。",
+const values = [
+  "科技為底：以 AI、區塊鏈與數位基礎建設推動產業升級。",
+  "通路為橋：整合電商、直銷、跨境供應鏈與實體通路資源。",
+  "品牌為核：透過品牌經營、產品選品與會員運營累積長期價值。",
+  "合規為本：所有業務依循當地法規與審查機制，重視風險控管與穩健發展。",
 ];
 
 export default function Home() {
   return (
     <main className="site-shell">
       <header className="site-header">
-        <Link className="brand-mark" href="/" aria-label="拓饗國際首頁">
-          <Image src="/tuoxiang-logo.png" alt="拓饗國際 Tuoxiang International" width={136} height={136} />
+        <Link className="brand-mark" href="/" aria-label="拓饗企業首頁">
+          <Image src="/tuoxiang-logo-horizontal.png" alt="拓饗國際 Tuoxiang International" width={220} height={90} />
         </Link>
         <nav className="site-nav" aria-label="主要導覽">
           <Link href="#about">集團定位</Link>
-          <Link href="#business">事業佈局</Link>
-          <Link href="#support">共享後勤</Link>
+          <Link href="#industry">產業布局</Link>
+          <Link href="#innovation">創新事業</Link>
+          <Link href="#brand">品牌通路</Link>
           <Link href="/buyba">買吧</Link>
           <Link href="/chiba">吃吧</Link>
         </nav>
@@ -35,25 +36,25 @@ export default function Home() {
 
       <section className="hero-section">
         <div className="hero-copy">
-          <p className="eyebrow">TUOXIANG INTERNATIONAL</p>
-          <h1>拓饗國際</h1>
+          <p className="eyebrow">TOP XIANG GROUP</p>
+          <h1>拓饗企業</h1>
           <p className="hero-lead">
-            以集團化營運思維，整合商流、餐飲與後勤資源，打造可持續擴張的事業平台。
+            以產業整合與科技應用為核心，打造跨領域、高效率、可規模化的未來商業平台。
           </p>
           <p className="hero-text">
-            拓饗國際不只是單一品牌的經營者，而是以事業母體的角色，整合資源、建立制度、配置團隊，
-            協助旗下買吧與吃吧在不同市場中形成清楚定位、穩定管理與長期成長能力。
+            拓饗企業（Top Xiang Group）長期聚焦於新經濟體系與實體產業的深度融合，
+            透過科技驅動與商業落地的雙軸策略，持續建構可複製、可擴張、可長期經營的產業生態系。
           </p>
           <div className="hero-actions">
-            <Link className="button primary" href="#business">查看事業佈局</Link>
-            <Link className="button secondary" href="#contact">合作洽詢</Link>
+            <Link className="button primary" href="#industry">查看產業布局</Link>
+            <Link className="button secondary" href="#film">觀看集團影片</Link>
           </div>
         </div>
-        <div className="hero-card" aria-label="拓饗管理核心">
-          <Image src="/tuoxiang-logo.png" alt="" width={520} height={520} priority />
+        <div className="hero-card" aria-label="拓饗企業核心定位">
+          <Image src="/tuoxiang-logo-horizontal.png" alt="" width={640} height={320} priority />
           <div>
-            <span>核心價值</span>
-            <strong>資源整合 · 制度治理 · 事業擴張</strong>
+            <span>集團定位</span>
+            <strong>產業整合 · 科技應用 · 商業落地</strong>
           </div>
         </div>
       </section>
@@ -61,71 +62,31 @@ export default function Home() {
       <section className="section two-column" id="about">
         <div>
           <p className="section-label">GROUP POSITIONING</p>
-          <h2>拓饗是事業整合平台，也是旗下品牌的營運中樞。</h2>
+          <h2>拓饗企業是一個以新經濟與實體產業融合為核心的多元化發展集團。</h2>
         </div>
         <div className="copy-block">
           <p>
-            拓饗國際以集團母體作為定位，負責整合財務、行政、人資、設計、客服、物流與營運制度。
-            旗下事業面對不同市場與客群，但後端管理必須具備一致的制度標準、數據節奏與責任歸屬。
+            集團願景是打造跨領域、高效率、可複製的商業模式，透過科技應用、資源整合、
+            品牌營運與通路建設，持續推進具長期價值的產業布局。
           </p>
           <p>
-            我們以買吧直銷商城與吃吧餐飲連鎖作為兩大事業軸線，透過共享後勤與營運治理，
-            讓不同商業模型能在同一套管理邏輯下穩定發展，並逐步建立可複製、可擴張的成長基礎。
+            拓饗重視長期穩健發展、合規經營、風險控管與產業協作，所有相關業務皆依循當地法規與審查機制進行規劃，
+            以建立能夠承接未來市場變化的整合型商業平台。
           </p>
         </div>
       </section>
 
-      <section className="section" id="business">
+      <section className="section" id="industry">
         <div className="section-heading">
-          <p className="section-label">BUSINESS PORTFOLIO</p>
-          <h2>事業佈局</h2>
+          <p className="section-label">INDUSTRY PORTFOLIO</p>
+          <h2>產業布局</h2>
           <p>
-            拓饗以「商城會員」與「餐飲連鎖」兩種商業模型切入市場，並以共享後勤支撐事業成長。
-          </p>
-        </div>
-        <div className="business-grid">
-          <article className="business-card">
-            <span className="card-kicker">直銷商城</span>
-            <h3>買吧</h3>
-            <p>
-              買吧聚焦會員經營、商品推廣與商城銷售，透過社群內容、會員服務與直銷商教育，
-              建立可累積、可轉換、可放大的會員型商流平台。
-            </p>
-            <ul>
-              <li>會員招募、直銷商服務與教育培訓</li>
-              <li>商品組合、PV 規劃與活動成交</li>
-              <li>商城訂單、客服服務與物流銜接</li>
-            </ul>
-            <Link className="text-link" href="/buyba">進入買吧事業介紹</Link>
-          </article>
-          <article className="business-card accent">
-            <span className="card-kicker">餐飲連鎖</span>
-            <h3>吃吧</h3>
-            <p>
-              吃吧聚焦餐盒產品、門市營運與通路合作，透過產品標準、成本控管與現場管理，
-              建立具備穩定品質與展店潛力的餐飲營運模型。
-            </p>
-            <ul>
-              <li>菜單、份量、成本與品質標準</li>
-              <li>出餐流程、人員訓練與門市管理</li>
-              <li>外送、團餐、合作通路與展店規劃</li>
-            </ul>
-            <Link className="text-link" href="/chiba">進入吃吧事業介紹</Link>
-          </article>
-        </div>
-      </section>
-
-      <section className="section support-section" id="support">
-        <div className="section-heading">
-          <p className="section-label">SHARED SERVICE CENTER</p>
-          <h2>共享後勤中心</h2>
-          <p>
-            共享後勤是拓饗的重要管理基礎。透過集中資源、統一標準與跨部門協作，
-            讓旗下事業降低重複成本，並提升執行效率與管理透明度。
+            拓饗近年積極投入多項前瞻產業，涵蓋區塊鏈技術應用、AI 算力基礎建設、
+            國際貿易整合、兩岸產學合作，以及智慧餐飲創新系統。
           </p>
         </div>
         <div className="support-grid">
-          {supportItems.map(([title, description]) => (
+          {industryItems.map(([title, description]) => (
             <article className="support-item" key={title}>
               <h3>{title}</h3>
               <p>{description}</p>
@@ -134,23 +95,96 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section two-column" id="innovation">
+        <div>
+          <p className="section-label">INNOVATION BUSINESS</p>
+          <h2>吃吧智慧餐飲系統，建立低人力、高標準化的餐飲創新模型。</h2>
+        </div>
+        <div className="copy-block">
+          <p>
+            在餐飲創新領域，拓饗推出「吃吧」智慧餐飲系統，導入自動化設備與機器人流程設計，
+            以降低人力依賴、提升營運效率，並回應餐飲業長期缺工與標準化管理需求。
+          </p>
+          <p>
+            吃吧透過機器人作業流程、半自動化廚房設備、SOP 數據化管理與低人力營運設計，
+            降低人事成本與營運風險，同時提升出餐穩定度與擴張速度，具備連鎖化與加盟複製潛力。
+          </p>
+          <Link className="text-link" href="/chiba">進入吃吧事業介紹</Link>
+        </div>
+      </section>
+
+      <section className="section" id="brand">
+        <div className="section-heading">
+          <p className="section-label">BRAND & CHANNEL</p>
+          <h2>品牌與通路</h2>
+          <p>
+            妍沁國際為拓饗企業旗下核心品牌營運公司，專注於產品選品、品牌建構與通路經營。
+          </p>
+        </div>
+        <div className="business-grid">
+          <article className="business-card">
+            <span className="card-kicker">品牌營運公司</span>
+            <h3>妍沁國際</h3>
+            <p>
+              妍沁以「自然嚴選」為產品核心理念，結合供應鏈整合能力與市場趨勢洞察，
+              持續開發具差異化與長期價值的商品組合。
+            </p>
+            <ul>
+              <li>產品選品與品牌建構</li>
+              <li>供應鏈整合與市場趨勢洞察</li>
+              <li>具差異化與長期價值的商品組合</li>
+            </ul>
+          </article>
+          <article className="business-card accent">
+            <span className="card-kicker">直銷電商平台</span>
+            <h3>買吧商城</h3>
+            <p>
+              買吧商城為妍沁國際旗下核心電商平台，採用「直銷＋電商」融合模式，
+              結合社群推廣與數據化管理，打造新型態分潤經濟體系。
+            </p>
+            <ul>
+              <li>嚴選商品策略</li>
+              <li>創新獎金制度</li>
+              <li>社群裂變機制與數位化管理</li>
+            </ul>
+            <Link className="text-link" href="/buyba">進入買吧事業介紹</Link>
+          </article>
+        </div>
+      </section>
+
       <section className="section operating-section">
         <div>
-          <p className="section-label">OPERATING PRINCIPLES</p>
-          <h2>拓饗的營運原則</h2>
+          <p className="section-label">CORE VALUE</p>
+          <h2>科技為底、通路為橋、品牌為核。</h2>
         </div>
         <ol className="principle-list">
-          {operatingPrinciples.map((item) => (
+          {values.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ol>
+      </section>
+
+      <section className="section video-section" id="film">
+        <div className="section-heading">
+          <p className="section-label">BRAND FILM</p>
+          <h2>拓饗集團形象影片</h2>
+          <p>
+            以影像呈現拓饗企業的產業視野、科技應用、品牌通路與智慧餐飲布局。
+          </p>
+        </div>
+        <div className="video-frame">
+          <video controls preload="metadata" poster="/tuoxiang-logo-horizontal.png">
+            <source src="/tuoxiang-group-v2-web.mp4" type="video/mp4" />
+            您的瀏覽器不支援影片播放。
+          </video>
+        </div>
       </section>
 
       <section className="contact-section" id="contact">
         <p className="section-label">CONTACT</p>
         <h2>合作洽詢</h2>
         <p>
-          歡迎品牌廠商、商品供應商、餐飲通路、團餐合作、商城會員與事業合作夥伴洽詢。
+          歡迎產業合作、技術應用、品牌通路、國際貿易、智慧餐飲與事業投資合作夥伴洽詢。
         </p>
         <div className="contact-actions">
           <Link className="button primary" href="/buyba">買吧合作</Link>
