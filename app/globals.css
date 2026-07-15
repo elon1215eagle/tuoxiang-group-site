@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f1ec;
-  --surface: #ffffff;
-  --surface-soft: #fbf7f1;
-  --ink: #1b1412;
-  --muted: #675b55;
-  --line: #e3d6cb;
-  --brand: #9f3436;
-  --brand-dark: #6f2022;
-  --gold: #b48752;
-  --green: #1d6559;
-  --shadow: 0 28px 84px rgba(45, 25, 18, 0.14);
+  --background: #05080f;
+  --surface: rgba(8, 17, 30, 0.86);
+  --surface-soft: rgba(12, 27, 48, 0.78);
+  --ink: #f5f8ff;
+  --muted: #b4c0d4;
+  --line: rgba(89, 181, 255, 0.22);
+  --brand: #2aa8ff;
+  --brand-dark: #0076d6;
+  --gold: #d8b46a;
+  --green: #22d1c3;
+  --shadow: 0 28px 90px rgba(0, 132, 255, 0.18);
 }
 
 @theme inline {
@@ -32,8 +32,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 18% 0%, rgba(180, 135, 82, 0.16), transparent 28%),
-    linear-gradient(180deg, rgba(159, 52, 54, 0.1), transparent 420px),
+    radial-gradient(circle at 18% 0%, rgba(42, 168, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 12%, rgba(216, 180, 106, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(5, 8, 15, 0.94), rgba(6, 12, 22, 0.98)),
     var(--background);
   color: var(--ink);
   font-family: Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
@@ -99,6 +100,8 @@ img {
   margin: 0 auto;
   padding: 18px 0;
   background: rgba(245, 241, 236, 0.88);
+  border-bottom: 1px solid rgba(89, 181, 255, 0.16);
+  background: rgba(5, 8, 15, 0.78);
   backdrop-filter: blur(18px);
 }
 
@@ -117,7 +120,7 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--muted);
+  color: rgba(245, 248, 255, 0.78);
   font-size: 15px;
   font-weight: 700;
 }
@@ -129,19 +132,49 @@ img {
 }
 
 .site-nav a:hover {
-  background: rgba(159, 52, 54, 0.1);
-  color: var(--brand-dark);
+  background: rgba(42, 168, 255, 0.12);
+  color: #fff;
 }
 
 .hero-section {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 460px;
   gap: 72px;
   align-items: center;
-  width: min(1220px, calc(100% - 40px));
-  min-height: calc(100vh - 104px);
-  margin: 0 auto;
-  padding: 38px 0 82px;
+  width: 100%;
+  min-height: calc(100vh - 76px);
+  margin: 0;
+  padding: 78px max(40px, calc((100vw - 1220px) / 2)) 96px;
+}
+
+.hero-bg-video,
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg-video {
+  z-index: 0;
+  object-fit: cover;
+  opacity: 0.56;
+}
+
+.hero-bg-overlay {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(5, 8, 15, 0.94) 0%, rgba(5, 8, 15, 0.74) 48%, rgba(5, 8, 15, 0.9) 100%),
+    radial-gradient(circle at 20% 30%, rgba(42, 168, 255, 0.3), transparent 34%),
+    radial-gradient(circle at 72% 16%, rgba(216, 180, 106, 0.14), transparent 28%);
+}
+
+.hero-copy,
+.hero-card {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-copy h1,
@@ -156,6 +189,8 @@ img {
 .hero-copy h1 {
   font-size: clamp(58px, 8vw, 116px);
   font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 36px rgba(42, 168, 255, 0.32);
 }
 
 .eyebrow,
@@ -172,7 +207,7 @@ img {
 .hero-lead {
   max-width: 760px;
   margin: 24px 0 0;
-  color: var(--ink);
+  color: #fff;
   font-size: clamp(26px, 3vw, 40px);
   font-weight: 800;
   line-height: 1.35;
@@ -189,6 +224,11 @@ img {
   color: var(--muted);
   font-size: 17px;
   line-height: 1.8;
+}
+
+.section-heading,
+.copy-block {
+  position: relative;
 }
 
 .hero-text {
@@ -212,8 +252,8 @@ img {
 }
 
 .hero-signals span {
-  border-bottom: 1px solid rgba(159, 52, 54, 0.28);
-  color: var(--brand-dark);
+  border-bottom: 1px solid rgba(216, 180, 106, 0.46);
+  color: var(--gold);
   padding: 0 4px 8px 0;
   font-size: 13px;
   font-weight: 900;
@@ -234,28 +274,32 @@ img {
 }
 
 .button.primary {
-  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  border-color: rgba(42, 168, 255, 0.7);
+  background: linear-gradient(135deg, #2aa8ff, #0059c8);
   color: #fff;
   box-shadow: 0 16px 32px rgba(159, 52, 54, 0.24);
 }
 
 .button.secondary {
-  background: rgba(255, 255, 255, 0.74);
-  color: var(--brand-dark);
+  border-color: rgba(216, 180, 106, 0.62);
+  background: rgba(5, 8, 15, 0.42);
+  color: var(--gold);
+  backdrop-filter: blur(12px);
 }
 
 .hero-card {
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(89, 181, 255, 0.24);
   border-radius: 8px;
-  background: linear-gradient(180deg, #fff, #fbf7f1);
+  background: linear-gradient(180deg, rgba(9, 21, 38, 0.88), rgba(5, 8, 15, 0.82));
   box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
 }
 
 .hero-card img {
   width: 100%;
   padding: 42px;
-  background: #f8f4ef;
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .hero-card div {
@@ -266,7 +310,7 @@ img {
 .hero-card span {
   display: block;
   margin-bottom: 8px;
-  color: var(--brand);
+  color: var(--gold);
   font-weight: 900;
 }
 
@@ -274,6 +318,7 @@ img {
   display: block;
   font-size: 22px;
   line-height: 1.45;
+  color: #fff;
 }
 
 .section,
@@ -312,15 +357,15 @@ img {
 .statement-section {
   width: min(1220px, calc(100% - 40px));
   margin: 0 auto;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid rgba(89, 181, 255, 0.22);
+  border-bottom: 1px solid rgba(89, 181, 255, 0.22);
   padding: 82px 0 90px;
 }
 
 .statement-section p {
   max-width: 780px;
   margin: 0 0 24px;
-  color: var(--brand);
+  color: var(--gold);
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -338,6 +383,27 @@ img {
   line-height: 1.06;
 }
 
+.section h2,
+.contact-section h2,
+.sub-hero h1 {
+  color: #fff;
+}
+
+.business-card h3,
+.support-item h3 {
+  color: #fff;
+}
+
+.business-card ul {
+  color: rgba(245, 248, 255, 0.88);
+}
+
+.sub-hero {
+  background:
+    radial-gradient(circle at 80% 16%, rgba(42, 168, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 22% 0%, rgba(216, 180, 106, 0.12), transparent 24%);
+}
+
 .business-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -350,7 +416,8 @@ img {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
-  box-shadow: 0 16px 44px rgba(65, 37, 25, 0.07);
+  box-shadow: 0 16px 44px rgba(0, 8, 18, 0.25);
+  backdrop-filter: blur(16px);
 }
 
 .business-card {
@@ -359,7 +426,7 @@ img {
 }
 
 .business-card.accent {
-  border-color: rgba(31, 107, 91, 0.25);
+  border-color: rgba(216, 180, 106, 0.36);
 }
 
 .business-card h3 {
@@ -379,7 +446,7 @@ img {
 }
 
 .text-link {
-  color: var(--brand-dark);
+  color: var(--gold);
   font-weight: 900;
 }
 
@@ -436,7 +503,8 @@ img {
   margin-bottom: 80px;
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(159, 52, 54, 0.26), transparent 42%),
+    linear-gradient(135deg, rgba(42, 168, 255, 0.22), transparent 42%),
+    radial-gradient(circle at 82% 12%, rgba(216, 180, 106, 0.16), transparent 28%),
     var(--ink);
   padding: 52px;
   color: #fff;
@@ -476,7 +544,7 @@ img {
 
 .buyba-hero {
   background:
-    radial-gradient(circle at 92% 24%, rgba(159, 52, 54, 0.14), transparent 34%),
+    radial-gradient(circle at 92% 24%, rgba(42, 168, 255, 0.18), transparent 34%),
     transparent;
 }
 
@@ -505,7 +573,7 @@ img {
   border-radius: 999px;
   background: var(--surface);
   padding: 12px 16px;
-  color: var(--brand-dark);
+  color: var(--gold);
   font-weight: 900;
 }
 
@@ -537,7 +605,7 @@ img {
 
 .video-frame {
   overflow: hidden;
-  border: 1px solid rgba(159, 52, 54, 0.18);
+  border: 1px solid rgba(89, 181, 255, 0.28);
   border-radius: 8px;
   background: #14100f;
   box-shadow: var(--shadow);
@@ -571,7 +639,7 @@ img {
 
   .hero-section {
     min-height: auto;
-    padding-top: 26px;
+    padding: 52px 20px 72px;
   }
 
   .business-grid,

@@ -37,6 +37,10 @@ export default function Home() {
       </header>
 
       <section className="hero-section">
+        <video className="hero-bg-video" autoPlay muted loop playsInline aria-hidden="true">
+          <source src="/blue-digital-tech-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-bg-overlay" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow">TOP XIANG GROUP</p>
           <h1>拓饗企業</h1>
