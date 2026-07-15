@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AmbientSound } from "./AmbientSound";
 
 const industryItems = [
   ["區塊鏈技術應用", "參與數位資產平台相關技術建設與應用場景規劃，推動數位經濟基礎能力。"],
@@ -20,6 +21,7 @@ const values = [
 export default function Home() {
   return (
     <main className="site-shell">
+      <AmbientSound />
       <header className="site-header">
         <Link className="brand-mark" href="/" aria-label="拓饗企業首頁">
           <Image src="/tuoxiang-logo-horizontal.png" alt="拓饗國際 Tuoxiang International" width={220} height={90} />
@@ -49,6 +51,12 @@ export default function Home() {
             <Link className="button primary" href="#industry">查看產業布局</Link>
             <Link className="button secondary" href="#film">觀看集團影片</Link>
           </div>
+          <div className="hero-signals" aria-label="拓饗企業策略關鍵字">
+            <span>Technology</span>
+            <span>Industry</span>
+            <span>Brand</span>
+            <span>Channel</span>
+          </div>
         </div>
         <div className="hero-card" aria-label="拓饗企業核心定位">
           <Image src="/tuoxiang-logo-horizontal.png" alt="" width={640} height={320} priority />
@@ -74,6 +82,11 @@ export default function Home() {
             以建立能夠承接未來市場變化的整合型商業平台。
           </p>
         </div>
+      </section>
+
+      <section className="statement-section">
+        <p>Top Xiang Group believes the next generation of business growth will not come from a single channel or a single product.</p>
+        <h2>It comes from the ability to integrate technology, industry, brand and execution into one scalable operating system.</h2>
       </section>
 
       <section className="section" id="industry">
