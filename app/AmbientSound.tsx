@@ -2,108 +2,121 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type BrowserAudioContext = typeof AudioContext;
+
+declare global {
+  interface Window {
+    webkitAudioContext?: BrowserAudioContext;
+  }
+}
+
 export function AmbientSound() {
-  const audioContextRef = useRef<AudioContext | null>(null);
-  const nodesRef = useRef<Array<AudioNode>>([]);
+  const contextRef = useRef<AudioContext | null>(null);
+  const sourceNodesRef = useRef<AudioScheduledSourceNode[]>([]);
+  const gainNodesRef = useRef<AudioNode[]>([]);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const stop = () => {
-    nodesRef.current.forEach((node) => {
-      if ("stop" in node && typeof node.stop === "function") {
-        try {
-          node.stop();
-        } catch {
-          // Node may already be stopped.
-        }
+  const stopSound = async () => {
+    sourceNodesRef.current.forEach((node) => {
+      try {
+        node.stop();
+      } catch {
+        // The source may already be stopped.
       }
       node.disconnect();
     });
-    nodesRef.current = [];
-    audioContextRef.current?.close();
-    audioContextRef.current = null;
+
+    gainNodesRef.current.forEach((node) => node.disconnect());
+    sourceNodesRef.current = [];
+    gainNodesRef.current = [];
+
+    if (contextRef.current) {
+      await contextRef.current.close();
+      contextRef.current = null;
+    }
+
     setIsPlaying(false);
   };
 
-  const start = async () => {
-    if (isPlaying) {
-      stop();
-      return;
-    }
-
+  const startSound = async () => {
     const AudioCtor = window.AudioContext || window.webkitAudioContext;
     if (!AudioCtor) return;
 
+    await stopSound();
+
     const ctx = new AudioCtor();
+    await ctx.resume();
+
     const master = ctx.createGain();
-    master.gain.value = 0.045;
-    master.connect(ctx.destination);
+    master.gain.setValueAtTime(0.12, ctx.currentTime);
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(1200, ctx.currentTime);
+    filter.Q.setValueAtTime(0.55, ctx.currentTime);
+
+    master.connect(filter);
+    filter.connect(ctx.destination);
+
+    const bass = ctx.createOscillator();
+    bass.type = "sine";
+    bass.frequency.setValueAtTime(65.41, ctx.currentTime);
+    const bassGain = ctx.createGain();
+    bassGain.gain.setValueAtTime(0.55, ctx.currentTime);
+    bass.connect(bassGain);
+    bassGain.connect(master);
 
     const pad = ctx.createOscillator();
+    pad.type = "triangle";
+    pad.frequency.setValueAtTime(130.81, ctx.currentTime);
     const padGain = ctx.createGain();
-    pad.type = "sine";
-    pad.frequency.value = 82.41;
-    padGain.gain.value = 0.38;
+    padGain.gain.setValueAtTime(0.22, ctx.currentTime);
     pad.connect(padGain);
     padGain.connect(master);
 
     const shimmer = ctx.createOscillator();
+    shimmer.type = "sine";
+    shimmer.frequency.setValueAtTime(523.25, ctx.currentTime);
     const shimmerGain = ctx.createGain();
-    shimmer.type = "triangle";
-    shimmer.frequency.value = 329.63;
-    shimmerGain.gain.value = 0.045;
+    shimmerGain.gain.setValueAtTime(0.055, ctx.currentTime);
     shimmer.connect(shimmerGain);
     shimmerGain.connect(master);
 
     const pulse = ctx.createOscillator();
+    pulse.type = "square";
+    pulse.frequency.setValueAtTime(196, ctx.currentTime);
     const pulseGain = ctx.createGain();
-    pulse.type = "sine";
-    pulse.frequency.value = 0.08;
-    pulse.connect(pulseGain.gain);
-    pulseGain.gain.value = 0.025;
+    pulseGain.gain.setValueAtTime(0.035, ctx.currentTime);
+    pulse.connect(pulseGain);
     pulseGain.connect(master);
 
-    const filter = ctx.createBiquadFilter();
-    filter.type = "lowpass";
-    filter.frequency.value = 720;
-    master.disconnect();
-    master.connect(filter);
-    filter.connect(ctx.destination);
+    [bass, pad, shimmer, pulse].forEach((node) => node.start());
 
-    pad.start();
-    shimmer.start();
-    pulse.start();
-
-    audioContextRef.current = ctx;
-    nodesRef.current = [pad, shimmer, pulse, padGain, shimmerGain, pulseGain, master, filter];
-    await ctx.resume();
+    contextRef.current = ctx;
+    sourceNodesRef.current = [bass, pad, shimmer, pulse];
+    gainNodesRef.current = [bassGain, padGain, shimmerGain, pulseGain, master, filter];
     setIsPlaying(true);
   };
 
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      start().catch(() => {
-        setIsPlaying(false);
-      });
-    }, 300);
+  const toggleSound = () => {
+    if (isPlaying) {
+      stopSound();
+      return;
+    }
 
+    startSound();
+  };
+
+  useEffect(() => {
     return () => {
-      window.clearTimeout(timer);
-      stop();
+      stopSound();
     };
-    // Browser autoplay rules may block this first attempt; the button remains as fallback.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <button className="sound-toggle" type="button" onClick={start} aria-pressed={isPlaying}>
+    <button className="sound-toggle" type="button" onClick={toggleSound} aria-pressed={isPlaying}>
       <span className={isPlaying ? "sound-dot active" : "sound-dot"} />
       {isPlaying ? "科技聲景播放中" : "啟動科技聲景"}
     </button>
   );
-}
-
-declare global {
-  interface Window {
-    webkitAudioContext?: typeof AudioContext;
-  }
 }
