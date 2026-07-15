@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const focusItems = [
-  ["會員經營", "建立會員名單、有效會員追蹤、直銷商服務與教育節奏。"],
-  ["商城營運", "商品上架、商品資訊、訂單狀態、活動檔期與後台資料管理。"],
-  ["商品推廣", "商品組合、PV 設計、活動成交、社群內容與銷售轉換。"],
-  ["客服物流", "會員問題、訂單協調、退換貨、庫存、出貨與物流異常處理。"],
+  ["會員經營", "建立會員名單、有效會員追蹤、直銷商服務與教育節奏，形成可累積的銷售資產。"],
+  ["商城營運", "管理商品上架、商品資訊、訂單狀態、活動檔期與後台資料，確保營運流程穩定。"],
+  ["商品推廣", "規劃商品組合、PV 設計、活動成交、社群內容與銷售轉換，提升市場動能。"],
+  ["客服物流", "串接會員問題、訂單協調、退換貨、庫存、出貨與物流異常，維持服務品質。"],
 ];
 
 const kpis = [
@@ -35,8 +35,8 @@ export default function BuybaPage() {
         <p className="eyebrow">BUYBA BUSINESS UNIT</p>
         <h1>買吧直銷商城</h1>
         <p>
-          買吧是拓饗國際旗下的直銷商城事業，聚焦會員經營、商品推廣、
-          商城銷售與直銷商服務，目標建立可持續擴張的會員型銷售平台。
+          買吧是拓饗國際旗下的會員商流事業，透過直銷商城、商品推廣、會員經營與社群轉換，
+          建立能持續累積客群、放大銷售效益的數位商務平台。
         </p>
         <div className="hero-actions">
           <a className="button primary" href="http://127.0.0.1:4173/?v=2">
@@ -49,15 +49,16 @@ export default function BuybaPage() {
       <section className="section two-column">
         <div>
           <p className="section-label">POSITIONING</p>
-          <h2>買吧不重新設計，先做拓饗母體導流。</h2>
+          <h2>買吧承接的是會員商流，不只是單一商品銷售。</h2>
         </div>
         <div className="copy-block">
           <p>
-            既有買吧頁面已完成，拓饗網站中的買吧分頁應扮演「集團導流與事業說明」角色，
-            不重複製作完整品牌頁，避免內容分散與維護成本增加。
+            買吧的核心價值在於建立可被管理、可被追蹤、可被放大的會員銷售系統。
+            透過商品組合、會員教育、活動推廣與服務流程，將一次性交易逐步轉化為長期會員經營。
           </p>
           <p>
-            後續若買吧正式上線網域，可將本頁的導流按鈕改成正式網址，並保留拓饗對買吧的事業定位說明。
+            在拓饗的集團架構下，買吧不需要單獨承擔所有後勤成本，而是透過共享財務、設計、客服、
+            物流與營運制度支援，將更多資源集中在會員成長、商品轉換與市場推進。
           </p>
         </div>
       </section>
@@ -80,7 +81,7 @@ export default function BuybaPage() {
       <section className="section metric-section">
         <div>
           <p className="section-label">KPI</p>
-          <h2>建議追蹤指標</h2>
+          <h2>核心追蹤指標</h2>
         </div>
         <div className="metric-list">
           {kpis.map((item) => (
