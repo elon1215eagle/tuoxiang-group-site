@@ -7,12 +7,12 @@ const focusItems = [
   {
     title: "嚴選商品與品牌管理",
     description:
-      "以妍沁國際的品牌營運能力為基礎，建立商品篩選、上架節奏、價格策略與產品資料管理，讓商城商品具備長期經營價值。",
+      "以妍沁國際的品牌營運能力為基礎，建立商品篩選、上架節奏、價格策略與產品資料管理，讓商品組合具備長期經營價值。",
   },
   {
     title: "會員電商與社群推廣",
     description:
-      "整合會員經營、社群推廣與數據化營運，讓買吧不只是銷售平台，而是可持續擴張的會員型通路系統。",
+      "整合會員經營、社群推廣與數據化營運，讓買吧形成可持續擴張的會員型通路系統。",
   },
   {
     title: "直銷制度與電商轉換",
@@ -22,7 +22,7 @@ const focusItems = [
   {
     title: "總部支援與營運複製",
     description:
-      "由拓饗體系提供財務、設計、客服、物流、行政與營運支援，建立可管理、可追蹤、可複製的商城營運模型。",
+      "由拓饗體系整合財務、設計、客服、物流、行政與營運支援，建立可管理、可追蹤、可複製的商城營運模型。",
   },
 ];
 
@@ -32,7 +32,7 @@ export default function BuybaPage() {
   return (
     <main className="site-shell subpage">
       <header className="site-header">
-        <Link className="brand-mark" href="/" aria-label="回到拓饗首頁">
+        <Link className="brand-mark" href="/" aria-label="拓饗企業首頁">
           <Image src="/tuoxiang-logo-horizontal.png" alt="拓饗國際 Tuoxiang International" width={220} height={90} />
         </Link>
         <nav className="site-nav" aria-label="主要導覽">
@@ -49,21 +49,20 @@ export default function BuybaPage() {
           <p className="entry-lead">拓饗體系旗下新型態會員電商通路</p>
           <p>
             買吧商城結合嚴選商品、社群推廣、會員經濟與數據化營運，打造可擴張、可複製、可持續經營的商城型通路平台。
-            此頁作為拓饗官網的正式品牌入口，實際商品、會員與商城服務請進入買吧商城。
           </p>
           <div className="hero-actions">
             <a className="button primary button-large" href={mallUrl}>
-              進入買吧商城
+              買吧商城
             </a>
             <Link className="button secondary" href="/">
-              返回拓饗首頁
+              拓饗企業
             </Link>
           </div>
         </div>
         <aside className="entry-panel" aria-label="買吧商城定位">
-          <span>Brand Entry</span>
-          <strong>品牌入口負責定位，商城網站負責成交。</strong>
-          <p>讓使用者先看懂買吧與拓饗的關係，再以最短路徑進入實際商城。</p>
+          <span>Business Position</span>
+          <strong>會員電商、直銷通路、社群推廣與數據化管理的整合平台。</strong>
+          <p>以商品力、制度力、推廣力與營運支援，建構可長期放大的會員商城模型。</p>
         </aside>
       </section>
 
@@ -74,12 +73,12 @@ export default function BuybaPage() {
         </div>
         <div className="copy-block">
           <p>
-            妍沁國際為拓饗企業旗下核心品牌營運公司，專注於產品選品、品牌建構與通路經營。買吧商城作為妍沁國際旗下核心電商平台，
-            承接商品銷售、會員推廣、社群裂變與數據化管理任務。
+            妍沁國際為拓饗企業旗下核心品牌營運公司，專注於產品選品、品牌建構與通路經營。
+            買吧商城作為妍沁國際旗下核心電商平台，承接商品銷售、會員推廣、社群裂變與數據化管理任務。
           </p>
           <p>
-            買吧不只是一般購物頁，而是以「直銷＋電商」融合模式建立的新型態分潤經濟體系。平台需要同時兼顧商品力、制度力、
-            推廣力、客服力與財務準確度，才能形成可管理、可複製、可長期放大的通路系統。
+            買吧以「直銷＋電商」融合模式建立新型態分潤經濟體系。平台同時兼顧商品力、制度力、
+            推廣力、客服力與財務準確度，形成可管理、可複製、可長期放大的通路系統。
           </p>
         </div>
       </section>
@@ -102,7 +101,7 @@ export default function BuybaPage() {
       <section className="section metric-section">
         <div>
           <p className="section-label">KPI</p>
-          <h2>買吧應追蹤的營運指標</h2>
+          <h2>買吧營運指標</h2>
         </div>
         <div className="metric-list">
           {kpis.map((item) => (
@@ -112,15 +111,15 @@ export default function BuybaPage() {
       </section>
 
       <section className="contact-section buyba-entry-cta">
-        <p className="section-label">MALL ACCESS</p>
-        <h2>進入買吧商城，查看商品與會員服務。</h2>
-        <p>拓饗官網保留集團與事業定位，買吧商城承接實際瀏覽、商品介紹、會員推廣與銷售轉換。</p>
+        <p className="section-label">MALL</p>
+        <h2>嚴選商品、會員經濟與社群推廣的商城型通路。</h2>
+        <p>買吧承接拓饗在品牌通路、會員經營與電商轉換上的事業布局。</p>
         <div className="contact-actions">
           <a className="button primary" href={mallUrl}>
-            立即進入買吧商城
+            買吧商城
           </a>
           <Link className="button secondary" href="/chiba">
-            查看吃吧事業
+            吃吧事業
           </Link>
         </div>
       </section>
