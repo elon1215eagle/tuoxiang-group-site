@@ -548,6 +548,75 @@ img {
     transparent;
 }
 
+.entry-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 48px;
+  align-items: center;
+  min-height: 620px;
+}
+
+.entry-copy {
+  max-width: 820px;
+}
+
+.entry-lead {
+  color: #fff !important;
+  font-size: clamp(24px, 3vw, 38px) !important;
+  font-weight: 900;
+  line-height: 1.35 !important;
+}
+
+.entry-panel {
+  border: 1px solid rgba(216, 180, 106, 0.38);
+  border-radius: 8px;
+  background:
+    linear-gradient(160deg, rgba(42, 168, 255, 0.18), transparent 45%),
+    rgba(7, 15, 28, 0.88);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.entry-panel span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.entry-panel strong {
+  display: block;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.entry-panel p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.button-large {
+  min-height: 58px;
+  padding: 0 30px;
+  font-size: 17px;
+}
+
+.buyba-entry-cta {
+  background:
+    linear-gradient(135deg, rgba(42, 168, 255, 0.22), transparent 42%),
+    radial-gradient(circle at 82% 12%, rgba(216, 180, 106, 0.18), transparent 28%),
+    rgba(8, 17, 30, 0.94);
+  border: 1px solid rgba(89, 181, 255, 0.24);
+}
+
 .chiba-hero {
   background:
     radial-gradient(circle at 92% 24%, rgba(31, 107, 91, 0.14), transparent 34%),
@@ -633,8 +702,14 @@ img {
   .hero-section,
   .two-column,
   .operating-section,
-  .metric-section {
+  .metric-section,
+  .entry-hero {
     grid-template-columns: 1fr;
+  }
+
+  .entry-hero {
+    min-height: auto;
+    gap: 28px;
   }
 
   .hero-section {
