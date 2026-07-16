@@ -24,7 +24,7 @@ export default function Home() {
       <AmbientSound />
       <header className="site-header">
         <Link className="brand-mark" href="/" aria-label="拓饗企業首頁">
-          <Image src="/tuoxiang-logo-horizontal.png" alt="拓饗國際 Tuoxiang International" width={220} height={90} />
+          <Image className="header-logo" src="/tuoxiang-logo-primary.png" alt="拓饗國際 Tuoxiang International" width={220} height={266} />
         </Link>
         <nav className="site-nav" aria-label="主要導覽">
           <Link href="#about">集團定位</Link>
@@ -61,7 +61,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-card" aria-label="拓饗企業核心定位">
-          <Image src="/tuoxiang-logo-horizontal.png" alt="" width={640} height={320} priority />
+          <Image className="hero-logo" src="/tuoxiang-logo-primary.png" alt="" width={560} height={676} priority />
           <div>
             <span>集團定位</span>
             <strong>科技為底、通路為橋、品牌為核，推動可落地的產業整合。</strong>
@@ -186,7 +186,7 @@ export default function Home() {
           <p>科技、產業、品牌與通路整合，形成拓饗企業的長期發展主軸。</p>
         </div>
         <div className="video-frame">
-          <video controls preload="metadata" poster="/tuoxiang-logo-horizontal.png">
+          <video controls preload="metadata" poster="/tuoxiang-logo-primary.png">
             <source src="/tuoxiang-group-v2-web.mp4" type="video/mp4" />
             您的瀏覽器不支援影片播放。
           </video>

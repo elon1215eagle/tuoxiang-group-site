@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description:
     "拓饗企業以產業整合與科技應用為核心，布局 AI 算力、區塊鏈技術、國際貿易、智慧餐飲、品牌通路與會員電商。",
   icons: {
-    icon: "/tuoxiang-logo.png",
-    shortcut: "/tuoxiang-logo.png",
+    icon: "/tuoxiang-logo-primary.png",
+    shortcut: "/tuoxiang-logo-primary.png",
   },
 };
 

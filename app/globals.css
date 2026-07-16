@@ -111,9 +111,12 @@ img {
   gap: 12px;
 }
 
-.brand-mark img {
-  width: 210px;
+.brand-mark img,
+.brand-mark img.header-logo {
+  width: 112px;
+  max-height: 88px;
   height: auto;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -297,9 +300,16 @@ img {
 }
 
 .hero-card img {
-  width: 100%;
-  padding: 42px;
-  background: rgba(255, 255, 255, 0.92);
+  width: min(100%, 390px);
+  height: auto;
+  margin: 0 auto;
+  padding: 28px;
+  background: rgba(5, 8, 15, 0.62);
+  object-fit: contain;
+}
+
+.hero-card img.hero-logo {
+  filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.28));
 }
 
 .hero-card div {
@@ -738,8 +748,10 @@ img {
     width: min(100% - 28px, 1180px);
   }
 
-  .brand-mark img {
-    width: 156px;
+  .brand-mark img,
+  .brand-mark img.header-logo {
+    width: 88px;
+    max-height: 74px;
   }
 
   .sound-toggle {

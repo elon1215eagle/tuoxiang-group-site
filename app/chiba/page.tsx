@@ -19,7 +19,7 @@ export default function ChibaPage() {
     <main className="site-shell subpage">
       <header className="site-header">
         <Link className="brand-mark" href="/" aria-label="拓饗企業首頁">
-          <Image src="/tuoxiang-logo-horizontal.png" alt="拓饗國際 Tuoxiang International" width={220} height={90} />
+          <Image className="header-logo" src="/tuoxiang-logo-primary.png" alt="拓饗國際 Tuoxiang International" width={220} height={266} />
         </Link>
         <nav className="site-nav" aria-label="主要導覽">
           <Link href="/">拓饗首頁</Link>
